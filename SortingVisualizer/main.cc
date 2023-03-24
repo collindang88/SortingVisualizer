@@ -5,6 +5,7 @@
 int main()
 {
 	std::cout << "Here is the SFML window:\n";
+	std::cout << "trying out git commit\n";
 
 	sf::RenderWindow window(sf::VideoMode(400, 400), "SFML works!");
 	sf::CircleShape shape(200.f);
