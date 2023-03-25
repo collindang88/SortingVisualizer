@@ -36,3 +36,8 @@ TEST(BubbleSortTests, SingleElementArray) {
     bubble_sort(input);
     ASSERT_EQ(input, expected);
 }
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

@@ -1,0 +1,32 @@
+name: C++ CI
+
+on: [push, pull_request]
+
+jobs:
+  build_and_test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup Vcpkg
+      uses: lukka/run-vcpkg@v10
+      with:
+        vcpkgGitCommitId: 'b81bc3a'
+        setupOnly: true
+
+    - name: Install Google Test via Vcpkg
+      run: |
+        .\vcpkg\vcpkg install gtest:x64-windows
+        .\vcpkg\vcpkg install gtest:x86-windows
+
+    - name: Build Solution
+      run: msbuild SortingVisualizer.sln /p:Configuration=Debug
+
+    - name: Run tests
+      run: |
+        cd x64\Debug\SortingTests.exe
