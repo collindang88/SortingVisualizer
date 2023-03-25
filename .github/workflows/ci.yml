@@ -39,8 +39,11 @@ jobs:
         .\vcpkg\vcpkg install sfml:x86-windows
 
     - name: Configure MSBuild
+      shell: powershell
       run: |
-        echo "INCLUDE=${{ github.workspace }}\vcpkg\installed\x64-windows\include;$(INCLUDE)" >> $GITHUB_ENV
+        $env:INCLUDE = "${{ github.workspace }}\vcpkg\installed\x64-windows\include;$env:INCLUDE"
+        echo "INCLUDE=$env:INCLUDE" >> $env:GITHUB_ENV
+
 
     - name: Build Solution
       run: msbuild SortingVisualizer.sln /p:Configuration=Debug
