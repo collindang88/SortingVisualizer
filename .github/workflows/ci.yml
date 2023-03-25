@@ -40,7 +40,7 @@ jobs:
 
     - name: Configure MSBuild
       run: |
-      echo "INCLUDE=${{ github.workspace }}\vcpkg\installed\x64-windows\include;$(INCLUDE)" >> $GITHUB_ENV
+        echo "INCLUDE=${{ github.workspace }}\vcpkg\installed\x64-windows\include;$(INCLUDE)" >> $GITHUB_ENV
 
     - name: Build Solution
       run: msbuild SortingVisualizer.sln /p:Configuration=Debug
