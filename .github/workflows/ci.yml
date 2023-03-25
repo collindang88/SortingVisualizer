@@ -20,8 +20,7 @@ jobs:
     - name: Setup Vcpkg
       uses: lukka/run-vcpkg@v10
       with:
-        vcpkgGitCommitId: 'b81bc3a'
-        setupOnly: true
+        vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
 
     - name: Install Google Test via Vcpkg
       run: |
