@@ -17,6 +17,12 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
 
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+
+    - name: Restore NuGet packages
+      run: nuget restore SortingVisualizer.sln
+
     - name: Setup Vcpkg
       uses: lukka/run-vcpkg@v10
       with:
@@ -32,9 +38,13 @@ jobs:
         .\vcpkg\vcpkg install sfml:x64-windows
         .\vcpkg\vcpkg install sfml:x86-windows
 
+    - name: Configure MSBuild
+      run: |
+      echo "INCLUDE=${{ github.workspace }}\vcpkg\installed\x64-windows\include;$(INCLUDE)" >> $GITHUB_ENV
+
     - name: Build Solution
       run: msbuild SortingVisualizer.sln /p:Configuration=Debug
 
     - name: Run tests
       run: |
-        cd x64\Debug\SortingTests.exe
+        .\x64\Debug\SortingTests.exe
