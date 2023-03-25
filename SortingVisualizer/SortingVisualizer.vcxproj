@@ -142,4 +142,5 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
+  <Import Project="$(SolutionDir)vcpkg.props" Condition="Exists('$(SolutionDir)vcpkg.props')" />
 </Project>
