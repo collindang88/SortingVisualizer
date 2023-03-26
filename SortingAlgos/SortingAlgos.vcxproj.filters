@@ -18,5 +18,8 @@
     <ClCompile Include="bubble_sort.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="selection_sort.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
