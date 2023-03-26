@@ -44,9 +44,12 @@ jobs:
         $env:INCLUDE = "${{ github.workspace }}\vcpkg\installed\x64-windows\include;$env:INCLUDE"
         echo "INCLUDE=$env:INCLUDE" >> $env:GITHUB_ENV
 
-
-    - name: Build Solution
-      run: msbuild SortingVisualizer.sln /p:Configuration=Debug
+    - name: Set up SFML
+      run: |
+        git clone --branch 2.5.1 https://github.com/SFML/SFML.git SFML
+        
+    - name: Build solution
+      run: msbuild SortingVisualizer.sln /p:Configuration=Debug /p:SFML_DIR=./SFML
 
     - name: Run tests
       run: |
