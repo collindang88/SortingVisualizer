@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\SortingVisualizer\bubble_sort.ixx">
+    <ClCompile Include="bubble_sort.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
