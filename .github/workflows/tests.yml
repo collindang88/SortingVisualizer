@@ -31,12 +31,10 @@ jobs:
     - name: Install Google Test via Vcpkg
       run: |
         .\vcpkg\vcpkg install gtest:x64-windows
-        .\vcpkg\vcpkg install gtest:x86-windows
-
+        
     - name: Install SFML via Vcpkg
       run: |
         .\vcpkg\vcpkg install sfml:x64-windows
-        .\vcpkg\vcpkg install sfml:x86-windows
 
     - name: Integrate Vcpkg with MSBuild
       run: |
