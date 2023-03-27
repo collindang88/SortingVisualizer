@@ -1,0 +1,50 @@
+name: C++ CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build_and_test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+
+    - name: Restore NuGet packages
+      run: nuget restore SortingVisualizer.sln
+
+    - name: Setup Vcpkg
+      uses: lukka/run-vcpkg@v10
+      with:
+        vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
+
+    - name: Install Google Test via Vcpkg
+      run: |
+        .\vcpkg\vcpkg install gtest:x64-windows
+        .\vcpkg\vcpkg install gtest:x86-windows
+
+    - name: Install SFML via Vcpkg
+      run: |
+        .\vcpkg\vcpkg install sfml:x64-windows
+        .\vcpkg\vcpkg install sfml:x86-windows
+
+    - name: Integrate Vcpkg with MSBuild
+      run: |
+        .\vcpkg\vcpkg integrate install
+        
+    - name: Build solution
+      run: msbuild SortingVisualizer.sln /p:Configuration=Debug /p:SFML_DIR=./SFML
+
+    - name: Run tests
+      run: |
+        .\x64\Debug\SortingTests.exe

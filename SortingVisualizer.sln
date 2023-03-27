@@ -14,6 +14,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SortingTests", "SortingTest
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SortingAlgos", "SortingAlgos\SortingAlgos.vcxproj", "{63D37B74-3A2E-41FD-842B-24146BABA024}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{8159C740-AED2-4678-BA1F-43F62C18EDF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{3DA55D83-5192-4577-849E-4B692A224EE1}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\tests.yml = .github\workflows\tests.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -49,6 +56,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8159C740-AED2-4678-BA1F-43F62C18EDF6} = {5DE5F852-9EF8-4E1E-8074-E995C0EF7FB3}
+		{3DA55D83-5192-4577-849E-4B692A224EE1} = {8159C740-AED2-4678-BA1F-43F62C18EDF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {085966C8-C892-4C8C-98FE-E6EC23AD950E}
