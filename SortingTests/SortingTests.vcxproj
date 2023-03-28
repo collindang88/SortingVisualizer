@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bubble_sort_tests.cc" />
+    <ClCompile Include="heap_sort_tests.cc" />
     <ClCompile Include="insertion_sort_tests.cc" />
     <ClCompile Include="pch.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
