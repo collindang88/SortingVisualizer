@@ -24,5 +24,8 @@
     <ClCompile Include="insertion_sort.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="heap_sort.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
