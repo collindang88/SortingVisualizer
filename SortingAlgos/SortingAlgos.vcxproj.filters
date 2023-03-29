@@ -13,19 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{553c2f43-08e9-4e9f-b0fa-c3c8967b211e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bubble_sort.ixx">
-      <Filter>Source Files</Filter>
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="selection_sort.ixx">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="insertion_sort.ixx">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="dummy_callback.ixx">
+      <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="heap_sort.ixx">
-      <Filter>Source Files</Filter>
+      <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="insertion_sort.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="selection_sort.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sorting_algos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

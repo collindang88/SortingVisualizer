@@ -20,9 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bubble_sort.ixx" />
+    <ClCompile Include="dummy_callback.ixx" />
     <ClCompile Include="heap_sort.ixx" />
     <ClCompile Include="insertion_sort.ixx" />
     <ClCompile Include="selection_sort.ixx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sorting_algos.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
