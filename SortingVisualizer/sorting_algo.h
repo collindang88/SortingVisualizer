@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#define YAML_CPP_DLL
 #include <yaml-cpp/yaml.h>
 #include <functional>
 #include <vector>

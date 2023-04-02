@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#define YAML_CPP_DLL
 #include <yaml-cpp/yaml.h>
 #include <vector>
 #include <string>
