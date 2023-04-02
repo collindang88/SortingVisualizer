@@ -31,17 +31,9 @@ jobs:
       with:
         vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
 
-    - name: Install yaml-cpp via Vcpkg
+    - name: Install packages via Vcpkg
       run: |
-        .\vcpkg\vcpkg install yaml-cpp:x64-windows
-
-    - name: Install Google Test via Vcpkg
-      run: |
-        .\vcpkg\vcpkg install gtest:x64-windows
-        
-    - name: Install SFML via Vcpkg
-      run: |
-        .\vcpkg\vcpkg install sfml:x64-windows
+        .\vcpkg\vcpkg install yaml-cpp:x64-windows gtest:x64-windows sfml:x64-windows
 
     - name: Integrate Vcpkg with MSBuild
       run: |

@@ -1,5 +1,3 @@
-#include <SFML/Graphics.hpp>
-#include <yaml-cpp/yaml.h>
 #include <functional>
 #include <vector>
 #include <string>
