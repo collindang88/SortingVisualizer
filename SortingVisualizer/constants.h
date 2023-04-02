@@ -10,7 +10,8 @@ const std::string WINDOW_TITLE = "Sorting Visualization";
 const sf::Uint32 DISABLE_RESIZE = sf::Style::Titlebar | sf::Style::Close;
 
 // Sorting settings
-const int NUM_ELEMENTS = 30;
+const int NUM_ELEMENTS = 100;
+
 
 // Visual settings
 const sf::Color BAR_FILL_COLOR = sf::Color::White;
@@ -20,13 +21,14 @@ const sf::Color BACKGROUND_COLOR = sf::Color::Black;
 
 // Time settings
 const int FRAME_RATE_LIMIT = 60;
-const int UPDATE_WINDOW_DELAY_MS = 2;
+const int UPDATE_WINDOW_DELAY_MS = 100;
 
 // Sorting types
 const std::string HEAP_SORT = "Heap Sort";
 const std::string SELECTION_SORT = "Selection Sort";
 const std::string INSERTION_SORT = "Insertion Sort";
 const std::string BUBBLE_SORT = "Bubble Sort";
+const std::string QUICK_SORT = "Quick Sort";
 const std::string UNKNOWN = "Unknown";
 
 // Font settings

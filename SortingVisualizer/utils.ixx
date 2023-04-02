@@ -8,12 +8,6 @@
 
 #include "constants.h"
 
-import heap_sort;
-import bubble_sort;
-import heap_sort;
-import insertion_sort;
-import selection_sort;
-
 export module utils;
 
 export std::vector<int> generateRandomNumbers(int num_elements, int max_number) {

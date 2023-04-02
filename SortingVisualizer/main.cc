@@ -12,6 +12,7 @@ import bubble_sort;
 import heap_sort;
 import insertion_sort;
 import selection_sort;
+import quick_sort;
 import utils;
 
 int main()
@@ -31,6 +32,9 @@ int main()
 		{BUBBLE_SORT, bubbleSort},
 		{INSERTION_SORT, insertionSort},
 		{SELECTION_SORT, selectionSort},
+		{QUICK_SORT, [](std::vector<int>& nums, std::function<void()> updateWindow) {
+			quickSort(nums, updateWindow);
+			}},
 	};
 
 	while (1) {
