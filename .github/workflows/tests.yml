@@ -46,6 +46,14 @@ jobs:
     - name: Integrate Vcpkg with MSBuild
       run: |
         .\vcpkg\vcpkg integrate install
+
+    - name: Configure yaml-cpp with CMake
+      run: |
+        cmake -S external/yaml-cpp -B external/yaml-cpp/build -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake
+
+    - name: Build yaml-cpp
+      run: |
+        cmake --build external/yaml-cpp/build --config Debug
         
     - name: Build solution
       run: msbuild SortingVisualizer.sln /p:Configuration=Debug /p:SFML_DIR=./SFML /p:VCPKG_TARGET_TRIPLET=x64-windows
