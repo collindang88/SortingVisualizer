@@ -1,0 +1,15 @@
+"Heap Sort":
+  num_elements: 30
+  update_delay: 50
+"Selection Sort":
+  num_elements: 30
+  update_delay: 20
+"Insertion Sort":
+  num_elements: 30
+  update_delay: 20
+"Bubble Sort":
+  num_elements: 30
+  update_delay: 20
+"Quick Sort":
+  num_elements: 75
+  update_delay: 100

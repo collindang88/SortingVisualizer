@@ -32,7 +32,6 @@ void quickSort(std::vector<int>& nums, int lo, int hi, std::function<void()> upd
 	if (lo < hi) {
 		int pivot_index = partition(nums, lo, hi, updateWindow);
 		quickSort(nums, lo, pivot_index - 1, updateWindow);
-        std::cout << "hi\n";
 		quickSort(nums, pivot_index + 1, hi, updateWindow);
 	}
 }

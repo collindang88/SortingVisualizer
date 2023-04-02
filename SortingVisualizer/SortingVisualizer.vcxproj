@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Collin\libs\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\include;$(SolutionDir)\SortingAlgos</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Collin\libs\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\include;$(SolutionDir)SortingAlgos;$(SolutionDir)external\yaml-cpp\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <TreatWarningAsError>false</TreatWarningAsError>
@@ -116,8 +116,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Collin\libs\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Collin\libs\SFML-2.5.1-windows-vc15-64-bit\SFML-2.5.1\lib;$(SolutionDir)external\yaml-cpp\build\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;sfml-main-d.lib;yaml-cppd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,6 +143,9 @@
     <ClCompile Include="utils.ixx" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\external\yaml-cpp\build\yaml-cpp.vcxproj">
+      <Project>{65a623a2-4fe4-3a79-88ba-16408dfa3dce}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\SortingAlgos\SortingAlgos.vcxproj">
       <Project>{63d37b74-3a2e-41fd-842b-24146baba024}</Project>
     </ProjectReference>
@@ -152,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="oddly_calming_font.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sorting_settings.yml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

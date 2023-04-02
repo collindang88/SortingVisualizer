@@ -35,4 +35,9 @@
       <Filter>Resource Files</Filter>
     </Font>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="sorting_settings.yml">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
