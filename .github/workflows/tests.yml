@@ -25,16 +25,9 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore SortingVisualizer.sln
 
-    - name: Setup CMake
-      uses: lukka/get-cmake@latest
-
-    - name: Build yaml-cpp
+    - name: Install yaml-cpp via Vcpkg
       run: |
-        cd external/yaml-cpp
-        mkdir build
-        cd build
-        cmake ..
-        cmake --build .
+        .\vcpkg\vcpkg install yaml-cpp:x64-windows
 
     - name: Setup Vcpkg
       uses: lukka/run-vcpkg@v10
@@ -54,7 +47,7 @@ jobs:
         .\vcpkg\vcpkg integrate install
         
     - name: Build solution
-      run: msbuild SortingVisualizer.sln /p:Configuration=Debug /p:SFML_DIR=./SFML
+      run: msbuild SortingVisualizer.sln /p:Configuration=Debug /p:SFML_DIR=./SFML /p:VCPKG_TARGET_TRIPLET=x64-windows
 
     - name: Run tests
       run: |
