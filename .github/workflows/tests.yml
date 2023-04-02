@@ -41,7 +41,7 @@ jobs:
 
     - name: Configure yaml-cpp with CMake
       run: |
-        cmake -S external/yaml-cpp -B external/yaml-cpp/build -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -DYAML_CPP_BUILD_SHARED_LIBS=ON
+        cmake -S external/yaml-cpp -B external/yaml-cpp/build -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -DYAML_CPP_BUILD_SHARED_LIBS=ON -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
 
     - name: Build yaml-cpp
       run: |
