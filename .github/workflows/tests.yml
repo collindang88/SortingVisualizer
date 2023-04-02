@@ -25,14 +25,14 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore SortingVisualizer.sln
 
-    - name: Install yaml-cpp via Vcpkg
-      run: |
-        .\vcpkg\vcpkg install yaml-cpp:x64-windows
-
     - name: Setup Vcpkg
       uses: lukka/run-vcpkg@v10
       with:
         vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
+
+    - name: Install yaml-cpp via Vcpkg
+      run: |
+        .\vcpkg\vcpkg install yaml-cpp:x64-windows
 
     - name: Install Google Test via Vcpkg
       run: |
