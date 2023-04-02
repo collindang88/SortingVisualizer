@@ -10,11 +10,11 @@ jobs:
   build_and_test:
     runs-on: windows-latest
 
+    steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
         submodules: 'recursive'
-        fetch-depth: 0
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
