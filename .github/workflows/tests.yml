@@ -25,6 +25,17 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore SortingVisualizer.sln
 
+    - name: Setup CMake
+      uses: lukka/get-cmake@latest
+
+    - name: Build yaml-cpp
+      run: |
+        cd external/yaml-cpp
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build .
+
     - name: Setup Vcpkg
       uses: lukka/run-vcpkg@v10
       with:
