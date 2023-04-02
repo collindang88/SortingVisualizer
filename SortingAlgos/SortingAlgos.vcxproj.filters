@@ -33,6 +33,9 @@
     <ClCompile Include="selection_sort.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="quick_sort.ixx">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sorting_algos.h">

@@ -23,6 +23,7 @@
     <ClCompile Include="dummy_callback.ixx" />
     <ClCompile Include="heap_sort.ixx" />
     <ClCompile Include="insertion_sort.ixx" />
+    <ClCompile Include="quick_sort.ixx" />
     <ClCompile Include="selection_sort.ixx" />
   </ItemGroup>
   <ItemGroup>
