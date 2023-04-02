@@ -24,9 +24,18 @@
     <ClCompile Include="utils.ixx">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="sorting_algo.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sorting_function.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sorting_algo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

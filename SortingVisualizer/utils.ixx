@@ -1,11 +1,17 @@
 #include <SFML/Graphics.hpp>
+#include <yaml-cpp/yaml.h>
 #include <vector>
 #include <string>
 #include <functional>
 #include <chrono>
 #include <thread>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 #include "constants.h"
+#include "sorting_function.h"
+#include "sorting_algo.h"
 
 export module utils;
 
@@ -59,4 +65,18 @@ export void drawAndUpdateWindow(sf::RenderWindow& window, const std::vector<sf::
 
 	handleEvents(window);
 	window.display();
+}
+
+export YAML::Node loadYamlFile(const std::string& path) {
+	std::ifstream yaml_file(path);
+	return YAML::Load(yaml_file);
+}
+
+export sf::Font loadFont() {
+	sf::Font font;
+	if (!font.loadFromFile(FONT_FILE_PATH)) {
+		std::cerr << FONT_LOAD_FAILED;
+		exit(EXIT_FAILURE);
+	}
+	return font;
 }
