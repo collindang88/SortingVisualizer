@@ -19,7 +19,7 @@ import utils;
 
 int main()
 {
-	std::ifstream yaml_file("sorting_settings.yml");
+	std::ifstream yaml_file(SORTING_YAML);
 	YAML::Node yaml_data = YAML::Load(yaml_file);
 
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_TITLE, DISABLE_RESIZE);

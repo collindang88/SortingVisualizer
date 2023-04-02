@@ -1,6 +1,5 @@
 #include <vector>
 #include <functional>
-#include <iostream>
 
 import dummy_callback;
 
