@@ -27,21 +27,17 @@ jobs:
       run: nuget restore SortingVisualizer.sln
 
     - name: Setup Vcpkg
-      uses: lukka/run-vcpkg@v11
+      uses: lukka/run-vcpkg@v10
       with:
         vcpkgGitCommitId: '5b1214315250939257ef5d62ecdcbca18cf4fb1c'
 
     - name: Install packages via Vcpkg
       run: |
-        .\vcpkg\vcpkg install
+        .\vcpkg\vcpkg install yaml-cpp:x64-windows gtest:x64-windows sfml:x64-windows
 
     - name: Integrate Vcpkg with MSBuild
       run: |
         .\vcpkg\vcpkg integrate install
-
-    - name: Show vcpkg integration
-      run: |
-        type .\vcpkg\vcpkg.props
 
     - name: Configure yaml-cpp with CMake
       run: |
