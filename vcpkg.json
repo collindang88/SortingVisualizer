@@ -2,8 +2,8 @@
   "name": "SortingVisualizer",
   "version-string": "0.1.0",
   "dependencies": [
-    "yaml-cpp",
-    "gtest",
-    "sfml"
+    "yaml-cpp:x64-windows",
+    "gtest:x64-windows",
+    "sfml:x64-windows"
   ]
 }
