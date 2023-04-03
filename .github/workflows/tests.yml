@@ -31,10 +31,6 @@ jobs:
       with:
         vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
 
-    - name: Install packages via Vcpkg
-      run: |
-        .\vcpkg\vcpkg install yaml-cpp:x64-windows gtest:x64-windows sfml:x64-windows
-
     - name: Integrate Vcpkg with MSBuild
       run: |
         .\vcpkg\vcpkg integrate install
