@@ -33,6 +33,7 @@ jobs:
 
     - name: Install packages via Vcpkg
       run: |
+        set VCPKG_BINARY_SOURCES=
         .\vcpkg\vcpkg install yaml-cpp:x64-windows gtest:x64-windows sfml:x64-windows
 
     - name: Integrate Vcpkg with MSBuild
