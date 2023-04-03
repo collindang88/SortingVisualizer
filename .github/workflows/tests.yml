@@ -27,13 +27,12 @@ jobs:
       run: nuget restore SortingVisualizer.sln
 
     - name: Setup Vcpkg
-      uses: lukka/run-vcpkg@v10
+      uses: lukka/run-vcpkg@v11
       with:
         vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
 
     - name: Install packages via Vcpkg
       run: |
-        set VCPKG_BINARY_SOURCES=
         .\vcpkg\vcpkg install yaml-cpp:x64-windows gtest:x64-windows sfml:x64-windows
 
     - name: Integrate Vcpkg with MSBuild
