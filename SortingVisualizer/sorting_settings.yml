@@ -1,5 +1,5 @@
 "Heap Sort":
-  num_elements: 30
+  num_elements: 60
   update_delay: 50
 "Selection Sort":
   num_elements: 30

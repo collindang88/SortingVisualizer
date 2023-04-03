@@ -30,10 +30,10 @@ void SortingAlgo::run(sf::RenderWindow& window, const sf::Font& font) const {
 
 std::vector<SortingAlgo> createSortingAlgos(YAML::Node yaml_data) {
 	std::vector<std::pair<std::string, SortingFunction>> pairs{
+		{HEAP_SORT, heapSort},
 		{QUICK_SORT, [](std::vector<int>& nums, std::function<void()> updateWindow) {
 			quickSort(nums, updateWindow);
 			}},
-		{HEAP_SORT, heapSort},
 		{BUBBLE_SORT, bubbleSort},
 		{INSERTION_SORT, insertionSort},
 		{SELECTION_SORT, selectionSort},
