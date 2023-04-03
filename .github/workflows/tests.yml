@@ -32,6 +32,9 @@ jobs:
         vcpkgGitCommitId: '5b1214315250939257ef5d62ecdcbca18cf4fb1c'
 
     - name: Install packages via Vcpkg
+      env:
+        ACTIONS_RUNTIME_TOKEN: ${{ secrets.ACTIONS_RUNTIME_TOKEN }}
+        ACTIONS_CACHE_URL: ${{ secrets.ACTIONS_CACHE_URL }}
       run: |
         .\vcpkg\vcpkg install yaml-cpp:x64-windows gtest:x64-windows sfml:x64-windows
 
