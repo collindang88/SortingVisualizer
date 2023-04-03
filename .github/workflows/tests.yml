@@ -29,7 +29,7 @@ jobs:
     - name: Setup Vcpkg
       uses: lukka/run-vcpkg@v11
       with:
-        vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
+        vcpkgGitCommitId: '5b1214315250939257ef5d62ecdcbca18cf4fb1c'
 
     - name: Integrate Vcpkg with MSBuild
       run: |
