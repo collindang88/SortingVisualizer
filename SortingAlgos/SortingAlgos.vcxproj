@@ -26,9 +26,6 @@
     <ClCompile Include="quick_sort.ixx" />
     <ClCompile Include="selection_sort.ixx" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="sorting_algos.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

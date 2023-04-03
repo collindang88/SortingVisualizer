@@ -1,12 +1,18 @@
 #include <SFML/Graphics.hpp>
+#define YAML_CPP_DLL
+#include <yaml-cpp/yaml.h>
 #include <vector>
 #include <string>
 #include <functional>
-#include <typeindex>
 #include <chrono>
 #include <thread>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 #include "constants.h"
+#include "sorting_function.h"
+#include "sorting_algo.h"
 
 export module utils;
 
@@ -38,9 +44,9 @@ export sf::Text createSortingAlgoText(const sf::Font& font, const std::string& s
 }
 
 export std::vector<sf::RectangleShape> createBars(const std::vector<int>& nums) {
-	std::vector<sf::RectangleShape> bars(NUM_ELEMENTS);
-	const float bar_width = static_cast<float>(WINDOW_WIDTH) / NUM_ELEMENTS;
-	for (int i = 0; i < NUM_ELEMENTS; i++) {
+	std::vector<sf::RectangleShape> bars(nums.size());
+	const float bar_width = static_cast<float>(WINDOW_WIDTH) / nums.size();
+	for (int i = 0; i < nums.size(); i++) {
 		bars[i] = sf::RectangleShape(sf::Vector2f(bar_width, static_cast<float>(nums[i])));
 		bars[i].setPosition(sf::Vector2f(static_cast<float>(i * bar_width), static_cast<float>(WINDOW_HEIGHT - nums[i])));
 		bars[i].setFillColor(BAR_FILL_COLOR);
@@ -60,5 +66,18 @@ export void drawAndUpdateWindow(sf::RenderWindow& window, const std::vector<sf::
 
 	handleEvents(window);
 	window.display();
-	std::this_thread::sleep_for(std::chrono::milliseconds(UPDATE_WINDOW_DELAY_MS));
+}
+
+export YAML::Node loadYamlFile(const std::string& path) {
+	std::ifstream yaml_file(path);
+	return YAML::Load(yaml_file);
+}
+
+export sf::Font loadFont() {
+	sf::Font font;
+	if (!font.loadFromFile(FONT_FILE_PATH)) {
+		std::cerr << FONT_LOAD_FAILED;
+		exit(EXIT_FAILURE);
+	}
+	return font;
 }

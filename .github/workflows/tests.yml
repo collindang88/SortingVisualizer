@@ -13,6 +13,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+        fetch-depth: 0
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
@@ -28,20 +31,24 @@ jobs:
       with:
         vcpkgGitCommitId: 'b81bc3a83fdbdffe80325eeabb2ec735a1f3c29d'
 
-    - name: Install Google Test via Vcpkg
+    - name: Install packages via Vcpkg
       run: |
-        .\vcpkg\vcpkg install gtest:x64-windows
-        
-    - name: Install SFML via Vcpkg
-      run: |
-        .\vcpkg\vcpkg install sfml:x64-windows
+        .\vcpkg\vcpkg install yaml-cpp:x64-windows gtest:x64-windows sfml:x64-windows
 
     - name: Integrate Vcpkg with MSBuild
       run: |
         .\vcpkg\vcpkg integrate install
+
+    - name: Configure yaml-cpp with CMake
+      run: |
+        cmake -S external/yaml-cpp -B external/yaml-cpp/build -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake -DYAML_BUILD_SHARED_LIBS=ON
+
+    - name: Build yaml-cpp
+      run: |
+        cmake --build external/yaml-cpp/build --config Debug
         
     - name: Build solution
-      run: msbuild SortingVisualizer.sln /p:Configuration=Debug /p:SFML_DIR=./SFML
+      run: msbuild SortingVisualizer.sln /p:Configuration=Debug
 
     - name: Run tests
       run: |

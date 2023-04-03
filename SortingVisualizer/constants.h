@@ -10,7 +10,9 @@ const std::string WINDOW_TITLE = "Sorting Visualization";
 const sf::Uint32 DISABLE_RESIZE = sf::Style::Titlebar | sf::Style::Close;
 
 // Sorting settings
-const int NUM_ELEMENTS = 100;
+const std::string SORTING_YAML = "sorting_settings.yml";
+const std::string NUM_ELEMENTS = "num_elements";
+const std::string UPDATE_DELAY = "update_delay";
 
 
 // Visual settings
@@ -29,7 +31,6 @@ const std::string SELECTION_SORT = "Selection Sort";
 const std::string INSERTION_SORT = "Insertion Sort";
 const std::string BUBBLE_SORT = "Bubble Sort";
 const std::string QUICK_SORT = "Quick Sort";
-const std::string UNKNOWN = "Unknown";
 
 // Font settings
 const std::string FONT_LOAD_FAILED = "Error: Failed to load font.\n";
