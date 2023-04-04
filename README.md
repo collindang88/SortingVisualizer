@@ -1,9 +1,27 @@
 # Sorting Visualizer
+### Dependencies
+- Windows 11
+- Powershell
+- Git
+- Vcpkg
+- Nuget
+- MSBuild
 
 ### Setting Up Project
 1. Clone this repo.
-2. Download SFML from website. (Windows 64-bit. Visual C++ 2017)
-3. Add sfml/include to **Project Properties >> C/C++ >> General >> Additional Include Directories**
-4. Add sfml/lib to **Project Properties >> Linker >> General >> Additional Library Directories**
-5. Link `sfml-graphics-d.lib`, `sfml-window-d.lib`, `sfml-system-d.lib`, `sfml-network-d.lib`, `sfml-audio-d.lib` to **Project Properties >> Linker >> Input >> Additional Dependencies**
-6. Run project. You should see graphics screen appear.
+```
+git clone --recurse-submodules https://github.com/collindang88/SortingVisualizer.git
+```
+
+2. Enter the repo.
+```
+cd SortingVisualizer
+```
+
+3. Run the build script.
+```
+.\build.ps1
+```
+
+### Running Project
+Open solution in Visual Studio. Then run in Debug mode.
