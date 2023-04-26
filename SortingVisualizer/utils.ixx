@@ -9,12 +9,22 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <Windows.h>
 
 #include "constants.h"
 #include "sorting_function.h"
 #include "sorting_algo.h"
 
 export module utils;
+
+export void minimizeConsoleWindow()
+{
+	HWND consoleWindowHandle = GetConsoleWindow();
+	if (consoleWindowHandle)
+	{
+		ShowWindow(consoleWindowHandle, SW_MINIMIZE);
+	}
+}
 
 export std::vector<int> generateRandomNumbers(int num_elements, int max_number) {
 	std::vector<int> nums(num_elements);
