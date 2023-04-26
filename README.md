@@ -25,3 +25,7 @@ cd SortingVisualizer
 
 ### Running Project
 Open solution in Visual Studio. Then run in Debug mode.
+
+This is what it should look like:
+
+![sorting GIF](https://github.com/collindang88/SortingVisualizer/blob/master/sorting_gif.gif)
