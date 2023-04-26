@@ -21,6 +21,7 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_TITLE, DISABLE_RESIZE);
 	window.setFramerateLimit(FRAME_RATE_LIMIT);
+	minimizeConsoleWindow();
 
 	while (1) {
 		for (const auto& sorting_algo : sorting_algos) {
